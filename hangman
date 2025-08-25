@@ -1,0 +1,44 @@
+import random
+
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug 25 09:03:08 2025
+
+@author: AIRI
+"""
+
+
+
+
+
+words = ("event","junior","programmer","config","router","developer","script")
+
+word = random.choice(words)
+
+guess = ["_" for letter in word]
+
+print("Welcome to play hangman!")
+
+lives = 6
+
+while lives > 0 and "_" in guess:
+    print(("Current sitution:"," ".join(guess)))
+    letter = input("Enter a letter please: ")
+     
+    if letter in word:
+        for i in range(len(word)):
+            if word[i] == letter:
+                guess[i] = letter
+        print("True!")
+        
+    else:
+        lives -=1
+        print("Wrong guess!")
+        print("You have lives left: ",lives)
+        
+if letter not in word:
+    print("Wrong guess!" "True word is:", word)
+
+else:
+    print("True guess!", "Word is:",word)
+        
